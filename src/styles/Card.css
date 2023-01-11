@@ -1,0 +1,17 @@
+.card {
+    width: 150px;
+    height: 250px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardName {
+    font-size: 16px;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

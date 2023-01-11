@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Card from './components/Card';
+import "./styles/App.css";
 
 const App = props => {
 
@@ -8,6 +9,7 @@ const App = props => {
   const [selectedCards, setSelectedCards] = useState([]);
 
   const selectCard = id => {
+    console.log("selectCard", id);
     if (selectedCards.includes(id)){
       startNewRound();
     } else {
@@ -26,16 +28,14 @@ const App = props => {
     setSelectedCards([]);
   };
 
-  useEffect(() => {
-    //render all cards in App div, upon App mount
-    displayedCards = allCards.map(card => {
-      return <Card key={card.id} cardName={card.name} onClick={selectCard(card.id)}/>
-    });
-    shuffleArray(displayedCards);
-  }, [])
+  /* useEffect(() => {
+    shuffleArray(allCards);
+    console.log('useEffect - on mount')
+  }, []) */
 
   useEffect(() => {
-    shuffleArray(displayedCards);
+    shuffleArray(allCards);
+    console.log('useEffect - on score change')
   }, [currentScore]);
 
   const allCards = [
@@ -49,8 +49,6 @@ const App = props => {
     {name: "Zebra", id: 7},
   ];
 
-  let displayedCards;
-
   const shuffleArray = array => {
     console.log("array shuffled");
   };
@@ -59,7 +57,11 @@ const App = props => {
     <div className="App">
       <header className="title">Memory Card</header>
       <div className="container">
-        {displayedCards}
+        {
+          allCards.map(card => {
+            return <Card key={card.id} cardName={card.name} onCardClick={() => selectCard(card.id)}/>
+          })
+        }
       </div>
     </div>
   );
