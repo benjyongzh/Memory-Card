@@ -5,22 +5,30 @@
 .App {
     display: flex;
     flex-direction: column;
-    gap: 40px;
     height: 100vh;
     width: 100%;
-    margin: 0;
+    position: fixed;
+    /* overflow: auto; */
+    align-items: stretch;
+    justify-content: space-between;
     background-color: #fdfdfb;
 }
 
 
 .head {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5e7186;
+    padding: 20px;
+}
+
+.head-texts {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 35px;
-    background-color: #5e7186;
-    padding: 50px;
+    gap: 15px;
 }
 
 .title {
@@ -39,14 +47,49 @@
     color: #fdfdfb;
 }
 
+.scores {
+    align-self: flex-end;
+    display: flex;
+    gap: 100px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fdfdfb;
+}
+
+.currentScore::before,
+.topScore::before {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+    
+}
+
+.currentScore::before {
+    content: "Current Score";
+}
+
+.topScore::before {
+    content: "High Score";
+}
+
 .container {
     display: grid;
-    gap: 25px;
-    padding: 40px 0px;
+    gap: 5px;
+    padding: 30px 0px;
     background-color: #fdfdfb;
-    width: min(100%, 800px);
-    border: 1px solid black;
-    grid-auto-flow: row;
+    width: min(100%, 1200px);
+    align-self: center;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
 }
 
 footer {

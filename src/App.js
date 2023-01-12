@@ -59,13 +59,21 @@ const App = props => {
 
   const allCards = [
     {name: "Elephant", id: 0},
-    {name: "Ant", id: 1},
+    {name: "Snake", id: 1},
     {name: "Rabbit", id: 2},
     {name: "Dog", id: 3},
     {name: "Giraffe", id: 4},
     {name: "Hamster", id: 5},
     {name: "Lion", id: 6},
     {name: "Zebra", id: 7},
+    {name: "Sheep", id: 8},
+    {name: "Owl", id: 9},
+    {name: "Whale", id: 10},
+    {name: "Crab", id: 11},
+    {name: "Seagull", id: 12},
+    {name: "Turtle", id: 13},
+    {name: "Crow", id: 14},
+    {name: "Llama", id: 15},
   ];
 
   const shuffleArray = array => {
@@ -75,8 +83,14 @@ const App = props => {
   return (
     <div className="App">
       <div className="head">
-        <header className="title">Memory Card</header>
-        <div className="instruction-text">To increase your score, tap the cards which you have not yet tapped. How far can you go before you start forgetting?</div>
+        <div className="head-texts">
+          <header className="title">Memory Card</header>
+          <div className="instruction-text">To increase your score, tap the cards which you have not yet tapped. How far can you go before you start forgetting?</div>
+        </div>
+        <div className="scores">
+          <div className="score currentScore">{currentScore}</div>
+          <div className="score topScore">{topScore}</div>
+        </div>
       </div>
       <div className="container">
         {
