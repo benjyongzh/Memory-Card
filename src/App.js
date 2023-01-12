@@ -9,6 +9,7 @@ const App = props => {
   const [selectedCards, setSelectedCards] = useState([]);
 
   const selectCard = id => {
+    console.log("=================================")
     console.log("selectCard", id);
     if (selectedCards.includes(id)){
       startNewRound();
@@ -19,24 +20,42 @@ const App = props => {
   };
 
   const newCardSelected = () => {
+    console.log("========== yay new card chosen!");
     setCurrentScore((previousScore) => previousScore + 1);
   };
 
   const startNewRound = () => {
+    console.log("============= new round");
     if (currentScore > topScore) setTopScore(currentScore);
     setCurrentScore(0);
     setSelectedCards([]);
   };
 
-  /* useEffect(() => {
+  useEffect(() => {
     shuffleArray(allCards);
     console.log('useEffect - on mount')
-  }, []) */
+  }, [])
 
   useEffect(() => {
     shuffleArray(allCards);
-    console.log('useEffect - on score change')
+    console.log('========== useEffect - on score change');
+    console.log("selectedCards:", selectedCards);
+    console.log("currentScore", currentScore);
+    console.log("topScore", topScore);
+    // check if game ended
+    checkGameEnd();
+
   }, [currentScore]);
+
+  const checkGameEnd = () => {
+    if (currentScore >= allCards.length){
+      gameWon();
+    };
+  };
+  const gameWon = () => {
+    console.log('game Won!');
+    startNewRound();
+  };
 
   const allCards = [
     {name: "Elephant", id: 0},
