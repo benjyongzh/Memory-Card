@@ -1,10 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
 .App {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 40px;
-    width: min(100%, 700px);
     height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: #fdfdfb;
+}
+
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 35px;
+    background-color: #5e7186;
+    padding: 50px;
 }
 
 .title {
@@ -12,10 +28,42 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    color: #fdfdfb;
+}
 
+.instruction-text {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fdfdfb;
 }
 
 .container {
     display: grid;
     gap: 25px;
+    padding: 40px 0px;
+    background-color: #fdfdfb;
+    width: min(100%, 800px);
+    border: 1px solid black;
+    grid-auto-flow: row;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    gap: 10px;
+    background-color: #5E7186;
+
+}
+
+.footer-text {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fdfdfb;
 }

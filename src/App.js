@@ -74,7 +74,10 @@ const App = props => {
 
   return (
     <div className="App">
-      <header className="title">Memory Card</header>
+      <div className="head">
+        <header className="title">Memory Card</header>
+        <div className="instruction-text">To increase your score, tap the cards which you have not yet tapped. How far can you go before you start forgetting?</div>
+      </div>
       <div className="container">
         {
           allCards.map(card => {
@@ -82,6 +85,11 @@ const App = props => {
           })
         }
       </div>
+      <footer>
+        <span className="footer-text">Benjamin Yong</span>
+        <span className="footer-text">The Odin Project</span>
+        <span className="footer-text">Jan 2023</span>
+      </footer>
     </div>
   );
 }
