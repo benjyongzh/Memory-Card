@@ -74,6 +74,8 @@ const App = props => {
     {name: "Turtle", id: 13},
     {name: "Crow", id: 14},
     {name: "Llama", id: 15},
+    {name: "Penguin", id: 16},
+    {name: "Shark", id: 17},
   ];
 
   const shuffleArray = array => {
@@ -84,7 +86,7 @@ const App = props => {
     <div className="App">
       <div className="head">
         <div className="head-texts">
-          <header className="title">Memory Card</header>
+          <header className="title">Memory Card Game</header>
           <div className="instruction-text">To increase your score, tap the cards which you have not yet tapped. How far can you go before you start forgetting?</div>
         </div>
         <div className="scores">
