@@ -1,17 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import "../styles/Card.css";
-// import crab from "../img/crab.jpg";
 
 const Card = props => {
-    const {cardName, onCardClick} = props;
+    const {cardName, onCardClick, cardSrc} = props;
 
     // const [selected, setSelected] = useState(false);
 
-    const imageSrc = require(`../img/${cardName.toLowerCase()}.jpg`);
+    
 
     return(
         <div className="card" onClick={onCardClick}>
-            <img className="image" src={imageSrc}/>
+            <img className="image" src={cardSrc} alt={cardName}/>
             <div className="cardName">{cardName}</div>
         </div>
     );

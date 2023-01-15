@@ -2,31 +2,54 @@ import React, {useState, useEffect} from "react";
 import Card from './components/Card';
 import "./styles/App.css";
 
+import elephant from "./img/elephant.jpg";
+import snake from "./img/snake.jpg";
+import rabbit from "./img/rabbit.jpg";
+import dog from "./img/dog.jpg";
+import giraffe from "./img/giraffe.jpg";
+import hamster from "./img/hamster.jpg";
+import lion from "./img/lion.jpg";
+import zebra from "./img/zebra.jpg";
+import sheep from "./img/sheep.jpg";
+import owl from "./img/owl.jpg";
+import whale from "./img/whale.jpg";
+import crab from "./img/crab.jpg";
+import seagull from "./img/seagull.jpg";
+import turtle from "./img/turtle.jpg";
+import crow from "./img/crow.jpg";
+import llama from "./img/llama.jpg";
+import penguin from "./img/penguin.jpg";
+import shark from "./img/shark.jpg";
+
+const cards = [
+  {name: "Elephant", id: 0, image: elephant},
+  {name: "Snake", id: 1, image: snake},
+  {name: "Rabbit", id: 2, image: rabbit},
+  {name: "Dog", id: 3, image: dog},
+  {name: "Giraffe", id: 4, image: giraffe},
+  {name: "Hamster", id: 5, image: hamster},
+  {name: "Lion", id: 6, image: lion},
+  {name: "Zebra", id: 7, image: zebra},
+  {name: "Sheep", id: 8, image: sheep},
+  {name: "Owl", id: 9, image: owl},
+  {name: "Whale", id: 10, image: whale},
+  {name: "Crab", id: 11, image: crab},
+  {name: "Seagull", id: 12, image: seagull},
+  {name: "Turtle", id: 13, image: turtle},
+  {name: "Crow", id: 14, image: crow},
+  {name: "Llama", id: 15, image: llama},
+  {name: "Penguin", id: 16, image: penguin},
+  {name: "Shark", id: 17, image: shark}
+]
+
+// const imageSrc = 
+
 const App = props => {
 
   const [currentScore, setCurrentScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
-  const [allCards, setAllCards] = useState([
-    {name: "Elephant", id: 0},
-    {name: "Snake", id: 1},
-    {name: "Rabbit", id: 2},
-    {name: "Dog", id: 3},
-    {name: "Giraffe", id: 4},
-    {name: "Hamster", id: 5},
-    {name: "Lion", id: 6},
-    {name: "Zebra", id: 7},
-    {name: "Sheep", id: 8},
-    {name: "Owl", id: 9},
-    {name: "Whale", id: 10},
-    {name: "Crab", id: 11},
-    {name: "Seagull", id: 12},
-    {name: "Turtle", id: 13},
-    {name: "Crow", id: 14},
-    {name: "Llama", id: 15},
-    {name: "Penguin", id: 16},
-    {name: "Shark", id: 17},
-  ]);
+  const [allCards, setAllCards] = useState(cards);
 
   const selectCard = id => {
     console.log("=================================")
@@ -119,7 +142,7 @@ const App = props => {
       <div className="container">
         {
           allCards.map(card => {
-            return <Card key={card.id} cardName={card.name} onCardClick={() => selectCard(card.id)}/>
+            return <Card key={card.id} cardName={card.name} onCardClick={() => selectCard(card.id)} cardSrc={card.image}/>
           })
         }
       </div>
