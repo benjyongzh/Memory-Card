@@ -7,6 +7,26 @@ const App = props => {
   const [currentScore, setCurrentScore] = useState(0);
   const [topScore, setTopScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [allCards, setAllCards] = useState([
+    {name: "Elephant", id: 0},
+    {name: "Snake", id: 1},
+    {name: "Rabbit", id: 2},
+    {name: "Dog", id: 3},
+    {name: "Giraffe", id: 4},
+    {name: "Hamster", id: 5},
+    {name: "Lion", id: 6},
+    {name: "Zebra", id: 7},
+    {name: "Sheep", id: 8},
+    {name: "Owl", id: 9},
+    {name: "Whale", id: 10},
+    {name: "Crab", id: 11},
+    {name: "Seagull", id: 12},
+    {name: "Turtle", id: 13},
+    {name: "Crow", id: 14},
+    {name: "Llama", id: 15},
+    {name: "Penguin", id: 16},
+    {name: "Shark", id: 17},
+  ]);
 
   const selectCard = id => {
     console.log("=================================")
@@ -32,12 +52,12 @@ const App = props => {
   };
 
   useEffect(() => {
-    shuffleArray(allCards);
-    console.log('useEffect - on mount')
-  }, [])
+    shuffleCards();
+    console.log('useEffect - on mount');
+  }, []);
 
   useEffect(() => {
-    shuffleArray(allCards);
+    shuffleCards();
     console.log('========== useEffect - on score change');
     console.log("selectedCards:", selectedCards);
     console.log("currentScore", currentScore);
@@ -52,34 +72,36 @@ const App = props => {
       gameWon();
     };
   };
+
   const gameWon = () => {
     console.log('game Won!');
     startNewRound();
   };
 
-  const allCards = [
-    {name: "Elephant", id: 0},
-    {name: "Snake", id: 1},
-    {name: "Rabbit", id: 2},
-    {name: "Dog", id: 3},
-    {name: "Giraffe", id: 4},
-    {name: "Hamster", id: 5},
-    {name: "Lion", id: 6},
-    {name: "Zebra", id: 7},
-    {name: "Sheep", id: 8},
-    {name: "Owl", id: 9},
-    {name: "Whale", id: 10},
-    {name: "Crab", id: 11},
-    {name: "Seagull", id: 12},
-    {name: "Turtle", id: 13},
-    {name: "Crow", id: 14},
-    {name: "Llama", id: 15},
-    {name: "Penguin", id: 16},
-    {name: "Shark", id: 17},
-  ];
+  const shuffleCards = () => {
+    setAllCards((prev) => {
+      // console.log(prev);
+      return giveShuffledArray(prev)});
+    // console.log(allCards);
+  }
 
   const shuffleArray = array => {
-    console.log("array shuffled");
+    // console.log(array);
+    let currentIndex = array.length;
+    let randomIndex;
+    while (currentIndex > 0){
+      console.log("array is shuffling");
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    };
+  }
+
+  const giveShuffledArray = array => {
+    let newArray = Array.from(array);
+    shuffleArray(newArray);
+    return newArray;
   };
 
   return (
