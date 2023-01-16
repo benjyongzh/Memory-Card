@@ -76,11 +76,6 @@ const App = props => {
 
   useEffect(() => {
     shuffleCards();
-    console.log('useEffect - on mount');
-  }, []);
-
-  useEffect(() => {
-    shuffleCards();
     console.log('========== useEffect - on score change');
     console.log("selectedCards:", selectedCards);
     console.log("currentScore", currentScore);
