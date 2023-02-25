@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb5834d0.css",
+    "main.js": "/static/js/main.5be7349b.js",
+    "static/media/turtle.jpg": "/static/media/turtle.56d4322287a4fef366ae.jpg",
+    "static/media/crab.jpg": "/static/media/crab.d3a12e636a0392d7dc3c.jpg",
+    "static/media/rabbit.jpg": "/static/media/rabbit.084019a5b38b82c14a9e.jpg",
+    "static/media/seagull.jpg": "/static/media/seagull.e655389c25af5bd6b783.jpg",
+    "static/media/elephant.jpg": "/static/media/elephant.800470c48a0222260b45.jpg",
+    "static/media/giraffe.jpg": "/static/media/giraffe.590829c383e527b42a44.jpg",
+    "static/media/dog.jpg": "/static/media/dog.7ee738b416b6e9f15cb3.jpg",
+    "static/media/sheep.jpg": "/static/media/sheep.c07b7d4a802a0d8711f1.jpg",
+    "static/media/shark.jpg": "/static/media/shark.70f7a484b07dc5af35d4.jpg",
+    "static/media/llama.jpg": "/static/media/llama.3057fa4fed9bbc3131dc.jpg",
+    "static/media/whale.jpg": "/static/media/whale.1c1d2d5a2e599de55836.jpg",
+    "static/media/snake.jpg": "/static/media/snake.ce377758baf7ff18e4fa.jpg",
+    "static/media/crow.jpg": "/static/media/crow.aacf9ab5c83bb5e8dead.jpg",
+    "static/media/owl.jpg": "/static/media/owl.52f2dd407d77f79cf366.jpg",
+    "static/media/hamster.jpg": "/static/media/hamster.2fdeef2422f461d7cd54.jpg",
+    "static/media/zebra.jpg": "/static/media/zebra.1d93b1093c7ed93d3cee.jpg",
+    "static/media/lion.jpg": "/static/media/lion.55a6fb8a9fdda6b93e84.jpg",
+    "static/media/penguin.jpg": "/static/media/penguin.9bf4f0934cc4687b39c0.jpg",
+    "index.html": "/index.html",
+    "main.eb5834d0.css.map": "/static/css/main.eb5834d0.css.map",
+    "main.5be7349b.js.map": "/static/js/main.5be7349b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb5834d0.css",
+    "static/js/main.5be7349b.js"
+  ]
+}
